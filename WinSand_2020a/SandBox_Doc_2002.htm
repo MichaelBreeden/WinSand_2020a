@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>SandBox 2002</title>
+    <style>
+        body {
+            margin: 20px;
+            padding: 0px;
+        }
+
+        h3 {
+            text-decoration: underline;
+            cursor: pointer;
+            color: #663333;
+            margin-left: 16px;
+        }
+
+        h4 {
+            /*text-decoration:underline;*/
+            cursor: pointer;
+            margin-left: 16px;
+        }
+
+        .clHr300 {
+            width: 300px;
+            height: 3px;
+            background-color: Black;
+            /*604079 SHoe 01/28/14 */
+        }
+
+        .clHr600 {
+            width: 600px;
+            height: 3px;
+            background-color: Black;
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        td {
+            /*height:50px; */
+            padding: 10px;
+            vertical-align: top;
+        }
+
+        .clCell1 {
+            width: 200px;
+        }
+
+        .clCell2 {
+            width: 400px;
+        }
+
+        pre {
+            white-space: pre-wrap
+        }
+    </style>
+    <script language="javascript">
+    function toggleDiv(that) {
+        var oNext = document.getElementById("idDiv" + that);
+        //alert("Hi-how about-" + that + "...=" + oNext.id + "...");
+        if (oNext.style.display == "block") {
+            oNext.style.display = "none";
+        }
+        else {
+            oNext.style.display = "block";
+        }
+    }
+    </script>
+</head>
+<body>
+
+<h3 onclick="toggleDiv('B1');">Notes</h3>
+<div id="idDivB1" style="display:block;">
+<p>
+This is largely meant as a C# test bed. It has a lot of things including, code for:<br />
+1. Calling an API.<br />
+2. SQLLite Db. THis was added partly as a test before being added to the Web API Project<br />
+3. The API part of this project was meant to work with the WebApp_MVC_API_2020a Web project.
+
+</p>
+</div>
+<hr align='left' class='clHr300' />
+
+<h3 onclick="toggleDiv('B2');">SQLLite</h3>
+<div id="idDivB2" style="display:block;">
+<p>
+<a href="https://www.youtube.com/watch?v=ayp3tHEkRc0">Using SQLLite in C# by Tim Corey</a>. He also has 
+a SQLLite Course.<br />
+Uses <a href="https://sqlitebrowser.org/">SQLLite Browser</a><br />
+Path to table = C:\Users\Mike\source\repos\WinSand_2020a\WinSand_2020a
+</p>
+<pre>
+After Create Persons table 
+In Solution, ->Show All Files - Add Db file to Project.
+->Properties ->Build Action = Content, ->Copy To Output Directory = Copy If Newer
+ -- It will put in the bin folder at Build. 
+
+Connection String .. there are none in App.config
+Path can be absolute or relative.
+
+NuGet 
+Apparently System.Data.SQLLite includes SQLLite.Data.SQLLite.Core
+Don't need System.Data.SQLLite.EF6
+So just get SQLLite.Data.SQLLite.Core
+... Only found Microsoft.Data.SQLLite which added SQLLite and SQLLite.Core. Probably has EF6.
+
+Dapper - Talks to DB better than ADO.Net. Handles SQLLite, SQL Server...
+(Not DataSets and Data Tables???) Maps to model. ...Install.
+
+Need to set Interop Library to SQLLite... @21:20
+ ... He sets Reference to NuGet package??? See if I can skip. I see Microsoft.Data.Sqllite
+
+
+</pre>
+</div>
+<hr align='left' class='clHr300' />
+
+<h3 onclick="toggleDiv('B3');">Notes 3 - Post</h3>
+<div id="idDivB3" style="display:block;">
+<p>
+<a href="https://code-maze.com/different-ways-consume-restful-api-csharp/">
+    Code Maze - A few great ways to Consume Restful API in C# - This seems Authoratative.
+</a>
+</p>
+
+<pre>
+
+</pre>
+</div>
+<hr align='left' class='clHr300' />
+
+</body>
+</html>
