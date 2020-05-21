@@ -39,7 +39,7 @@ namespace WinSand_2020a.Forms
             // people.Add(new PersonModel { FirstName = "Mike", LastName = "Breeden" });
             // people.Add(new PersonModel { FirstName = "Debbie", LastName = "Rutman" });
             // people.Add(new PersonModel { FirstName = "Marissa", LastName = "Baggins" });
-            people = SQLLiteDatAccess.LoadPeople();
+            people = SQLLiteDataAccess.LoadPeople();
             WireUpPeopleList();
         }
 
@@ -48,7 +48,7 @@ namespace WinSand_2020a.Forms
             PersonModel p = new PersonModel();
             p.FirstName = tabPage1_textBox_FirstName.Text;
             p.LastName = tabPage1_textBox_LastName.Text;
-            SQLLiteDatAccess.SavePerson(p);
+            SQLLiteDataAccess.SavePerson(p);
             //people.Add(p); // Could, but no
             //WireUpPeopleList();
             p.FirstName = String.Empty;
@@ -67,7 +67,7 @@ namespace WinSand_2020a.Forms
             PersonModel p = new PersonModel();
             p.FirstName = tabPage1_textBox_FirstName.Text;
             p.LastName = tabPage1_textBox_LastName.Text;
-            SQLLiteDatAccess.DeletePerson(p);
+            SQLLiteDataAccess.DeletePerson(p);
 
         }
     }
